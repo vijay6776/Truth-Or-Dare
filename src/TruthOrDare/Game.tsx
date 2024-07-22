@@ -16,7 +16,7 @@ const Game :React.FC= () => {
         if(number===0){
             setValue("Truth")
             setColor("bg-success")
-            setMsg("have to say truth")
+           
             if(truthIndex==truthArray.length-1){
                 setTruthIndex(0);
             } else{
@@ -26,7 +26,7 @@ const Game :React.FC= () => {
         } else{
             setValue("Dare")
             setColor("bg-danger")
-            setMsg("have to accept dare")
+            
             if(dareIndex==dareArray.length-1){
                 setDareIndex(0);
             } else{
@@ -67,11 +67,12 @@ const Game :React.FC= () => {
     const [value,setValue]=useState<string>("Start the game");
     const [number ,setNumber]=useState<number>();
     const [color,setColor]=useState<string>("");
-    const [msg,setMsg]=useState<string>("");
+
     const [truthIndex,setTruthIndex]=useState<number>(0);
     const [dareIndex,setDareIndex]=useState<number>(0);
-    const [truthArray,setTruthArray]=useState<string[]>([
-        "What’s your biggest fear?",
+    // const [truthArray,setTruthArray]=useState<string[]>([
+    const truthArray:string[]=
+        ["What’s your biggest fear?",
         "What’s the strangest thing you’ve ever eaten?",
         "Who was your first celebrity crush?",
         "What’s your biggest insecurity?",
@@ -132,10 +133,12 @@ const Game :React.FC= () => {
         "Have you ever had a fling?",
         "What secretly scares you?",
         "Can you roll your tongue?",
-        "What country do you want to run away to?"])
+        "What country do you want to run away to?"];
+    // )
 
-        const [dareArray,setDareArray]=useState<string[]>( [
-           "Read out the last dirty text you sent?",
+        // const [dareArray,setDareArray]=useState<string[]>( [
+        const dareArray:string[]=
+           ["Read out the last dirty text you sent?",
   "Eat five spoonfuls of a condiment of your choice?",
   "Try to juggle 3 things of the group's choice?",
   "Pretend to be a food item of your choice?",
@@ -214,8 +217,8 @@ const Game :React.FC= () => {
   "Update your relationship status to 'engaged' on Facebook?",
   "Download the Wetherspoons app and order a random food item to someone's table?"
 
-        ]
-        )
+        ];
+        // )
 
         const [gamersArray,setGamersArray]=useState<string[]>([]);
         
